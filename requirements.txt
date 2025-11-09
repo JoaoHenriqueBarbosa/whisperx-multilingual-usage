@@ -1,0 +1,4 @@
+whisperx
+torch
+python-dotenv
+pyyaml

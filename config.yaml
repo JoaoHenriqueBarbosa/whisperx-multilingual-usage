@@ -1,0 +1,66 @@
+# Configuração do Pipeline de Transcrição
+
+# Dispositivo e Performance
+device:
+  type: "cuda"  # cuda, cpu, auto
+  compute_type: "float16"  # float16 para GPU, int8 para CPU
+  enable_tf32: true
+  cudnn_benchmark: true
+
+# Modelo Whisper
+whisper:
+  model_size: "large-v2"  # tiny, base, small, medium, large-v2, large-v3
+  language: "pt"
+  batch_size: 16
+
+# Alinhamento
+alignment:
+  enabled: true
+  return_char_alignments: false
+
+# Diarização (identificação de speakers)
+diarization:
+  enabled: false  # Requer aceitar termos em https://hf.co/pyannote/speaker-diarization-3.1
+  model: "pyannote/speaker-diarization-3.1"
+
+# Diretórios
+paths:
+  input: "data/input"
+  output: "data/output"
+  logs: "logs"
+
+# Formatos de saída
+output:
+  formats:
+    - json
+    - txt
+    - srt
+  json:
+    indent: 2
+    ensure_ascii: false
+  txt:
+    include_timestamps: false
+    include_speakers: true
+  srt:
+    max_line_length: 42
+
+# Processamento
+processing:
+  audio_extensions:
+    - .mp3
+    - .wav
+    - .m4a
+    - .flac
+    - .ogg
+    - .mp4
+    - .avi
+    - .mkv
+  skip_existing: false
+  parallel_processing: false
+
+# Logging
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "transcription.log"  # Relativo a paths.logs
+  console: true
