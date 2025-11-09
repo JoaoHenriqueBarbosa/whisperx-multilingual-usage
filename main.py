@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 """
-Sistema de Transcrição de Áudio - Meditations
 Pipeline modular para transcrição de arquivos de áudio usando WhisperX
 """
 import sys

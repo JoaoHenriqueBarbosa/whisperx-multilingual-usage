@@ -1,4 +1,4 @@
-# Sistema de Transcrição de Áudio - Meditations
+# Sistema de Transcrição de Áudio
 
 Pipeline modular profissional para transcrição de arquivos de áudio usando WhisperX e PyTorch.
 
@@ -15,7 +15,7 @@ Pipeline modular profissional para transcrição de arquivos de áudio usando Wh
 ## Estrutura do Projeto
 
 ```
-meditations/
+whisperx/
 ├── config.yaml              # Configuração principal
 ├── main.py                  # Script principal
 ├── run.sh                   # Script de execução

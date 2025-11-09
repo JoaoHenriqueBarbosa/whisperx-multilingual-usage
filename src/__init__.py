@@ -1,4 +1,4 @@
 """
-Meditations - Sistema de Transcrição de Áudio
+whisperx - Sistema de Transcrição de Áudio
 """
 __version__ = "1.0.0"
